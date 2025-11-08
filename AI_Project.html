@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Multiplayer Reaction Timer — Clean</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>⚡ Multiplayer Reaction Timer</h1>
+    <div class="controls">
+      <label>Players:
+        <select id="playerCount">
+          <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+          <option value="4">4</option><option value="5">5</option>
+        </select>
+      </label>
+      <button id="startBtn">Start Turn</button>
+      <button id="nextRoundBtn">End Round & Leaderboard</button>
+      <button id="resetBtn">Reset All Scores</button>
+    </div>
+  </header>
+
+  <div class="grid">
+    <div class="panel">
+      <div id="gameBox" class="waiting small">Click Start or press <strong>SPACE</strong></div>
+      <div id="delayInfo" class="small-muted" style="margin-top:8px;text-align:center;"></div>
+      <div class="config" id="configArea"></div>
+      <footer>
+        <div class="small-muted">Last action: <span id="status">Idle</span></div>
+        <div class="small-muted">Current turn: <span id="currentTurn">Player 1</span></div>
+      </footer>
+    </div>
+
+    <aside class="panel">
+      <h3 style="margin:0 0 8px 0">Players</h3>
+      <div id="playersStats" class="stats-list"></div>
+
+      <div class="leaderboard" id="leaderboard" style="display:none;">
+        <h4 style="margin:0 0 8px 0">Round Leaderboard</h4>
+        <div id="leaderboardRows"></div>
+        <div style="margin-top:8px;display:flex;gap:8px;">
+          <button id="closeLbBtn">Close</button>
+          <button id="saveRoundBtn">Save Round Results</button>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
